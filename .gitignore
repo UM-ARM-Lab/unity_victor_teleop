@@ -8,3 +8,4 @@ Temp/
 obj/Debug
 *.bin
 Library/CrashedAssetImports.txt
+Library/assetDatabase*
