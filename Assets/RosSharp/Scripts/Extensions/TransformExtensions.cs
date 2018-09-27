@@ -106,7 +106,7 @@ namespace RosSharp
         public static Quaternion Ros2Unity(this Quaternion quaternion)
         {
             //return new Quaternion(-quaternion.x, -quaternion.z, -quaternion.y, quaternion.w);
-            return new Quaternion(-quaternion.y, -quaternion.z, -quaternion.x, quaternion.w);
+            return new Quaternion(quaternion.y, -quaternion.z, -quaternion.x, quaternion.w);
         }
 
         public static Quaternion Unity2Ros(this Quaternion quaternion)

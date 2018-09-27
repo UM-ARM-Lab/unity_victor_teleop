@@ -6,3 +6,4 @@ Temp/
 *.cache
 *.log
 obj/Debug
+*.bin
