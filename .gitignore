@@ -7,3 +7,4 @@ Temp/
 *.log
 obj/Debug
 *.bin
+Library/CrashedAssetImports.txt
