@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/VRTK/Examples/003_Controller_SimplePointer.unity
+  isLoaded: 1
+  isActive: 1
