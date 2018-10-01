@@ -28,13 +28,14 @@ namespace RosSharp.RosBridgeClient
         public RosSocket RosSocket { get; private set; }
         public enum Protocols { WebSocketSharp, WebSocketNET };
         public Protocols Protocol;
-        public string RosBridgeServerUrl = "ws://192.168.0.1:9090";
+        private string RosBridgeServerUrl = "ws://192.168.0.1:9090";
 
         private ManualResetEvent IsConnected = new ManualResetEvent(false);
 
         public void Awake()
         {
-            RosSocket = ConnectToRos(Protocol, RosBridgeServerUrl, OnConnected, OnClosed);
+            string url = GameObject.Find("RosBridgeSettings").GetComponent<rosmaster>().rosBridgeServerURL;
+            RosSocket = ConnectToRos(Protocol, url, OnConnected, OnClosed);
 
             if (!IsConnected.WaitOne(timeout * 1000))
                 Debug.LogWarning("Failed to connect to RosBridge at: " + RosBridgeServerUrl);

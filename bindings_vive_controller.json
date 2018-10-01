@@ -1,5 +1,5 @@
 {
-   "app_key" : "application.generated.unity.steamvr.exe",
+   "app_key" : "application.generated.unity.vivevictor.exe",
    "bindings" : {
       "/actions/buggy" : {
          "sources" : [
@@ -11,15 +11,6 @@
                },
                "mode" : "trigger",
                "path" : "/user/hand/left/input/trigger"
-            },
-            {
-               "inputs" : {
-                  "pull" : {
-                     "output" : "/actions/buggy/in/throttle"
-                  }
-               },
-               "mode" : "trigger",
-               "path" : "/user/hand/right/input/trigger"
             },
             {
                "inputs" : {
@@ -36,6 +27,42 @@
             {
                "inputs" : {
                   "click" : {
+                     "output" : "/actions/buggy/in/reset"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/buggy/in/squeeze"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/buggy/in/reset"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/buggy/in/squeeze"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
                      "output" : "/actions/buggy/in/brake"
                   },
                   "position" : {
@@ -47,21 +74,12 @@
             },
             {
                "inputs" : {
-                  "click" : {
-                     "output" : "/actions/buggy/in/reset"
+                  "pull" : {
+                     "output" : "/actions/buggy/in/throttle"
                   }
                },
-               "mode" : "button",
-               "path" : "/user/hand/left/input/application_menu"
-            },
-            {
-               "inputs" : {
-                  "click" : {
-                     "output" : "/actions/buggy/in/reset"
-                  }
-               },
-               "mode" : "button",
-               "path" : "/user/hand/right/input/application_menu"
+               "mode" : "trigger",
+               "path" : "/user/hand/right/input/trigger"
             }
          ]
       },

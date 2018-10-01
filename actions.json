@@ -62,6 +62,10 @@
     {
       "name": "/actions/buggy/in/Reset",
       "type": "boolean"
+    },
+    {
+      "name": "/actions/buggy/in/Squeeze",
+      "type": "boolean"
     }
   ],
   "action_sets": [

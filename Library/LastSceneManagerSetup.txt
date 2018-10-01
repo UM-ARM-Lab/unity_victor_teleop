@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/InteractionExtension.unity
+- path: Assets/Scenes/VictorTeleop.unity
   isLoaded: 1
   isActive: 1

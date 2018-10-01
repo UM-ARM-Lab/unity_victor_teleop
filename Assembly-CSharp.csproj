@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\rosmaster.cs" />
     <Compile Include="Assets\RosSharp\Scripts\Extensions\StandardHeaderExtensions.cs" />
     <Compile Include="Assets\RosSharp\Scripts\Extensions\TransformExtensions.cs" />
     <Compile Include="Assets\RosSharp\Scripts\RosBridgeClient\MessageHandling\JointStatePatcher.cs" />
@@ -294,7 +295,9 @@
     <Compile Include="Assets\SteamVR_Input\ActionObjects\SteamVR_Input_ActionSet_platformer_In.cs" />
     <Compile Include="Assets\SteamVR_Input\SteamVR_Input_Actions.cs" />
     <Compile Include="Assets\SteamVR_Input\SteamVR_Input_ActionSets.cs" />
+    <Compile Include="Assets\Victor\Scripts\GripperPublisher.cs" />
     <Compile Include="Assets\Victor\Scripts\HandInteractable.cs" />
+    <Compile Include="Assets\Victor\Scripts\HandTargetPublisher.cs" />
     <Compile Include="Assets\Victor\Scripts\VictorHand.cs" />
     <None Include="Assets\SteamVR\Resources\SteamVR_Fade.shader" />
     <None Include="Assets\SteamVR\Resources\SteamVR_ClearAll.shader" />
