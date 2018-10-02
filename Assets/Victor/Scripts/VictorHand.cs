@@ -48,6 +48,7 @@ namespace Valve.VR.InteractionSystem.Sample
         public SteamVR_Action_Boolean a_grip;
 
         public Transform hand_target;
+        public Transform hand_real;
 
         //[SteamVR_DefaultAction("Reset", "buggy")]
         //public SteamVR_Action_Boolean a_reset;
@@ -75,6 +76,7 @@ namespace Valve.VR.InteractionSystem.Sample
             StartCoroutine(DoBuzz());
             //buggy.controllerReference = transform;
             //initialScale = buggy.transform.localScale;
+            //hand_target = hand_real;
         }
 
         private void Update()
@@ -98,7 +100,7 @@ namespace Valve.VR.InteractionSystem.Sample
 
                 //throttle = a_trigger.GetAxis(hand);
                 gripped = a_grip.GetState(hand);
-                Debug.Log("Gripped is " + gripped);
+                //Debug.Log("Gripped is " + gripped);
                 RosSharp.RosBridgeClient.GripperPublisher gripper_pub = 
                     GetComponent<RosSharp.RosBridgeClient.GripperPublisher>();
                 RosSharp.RosBridgeClient.HandTargetPublisher hand_target_pub = 

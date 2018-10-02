@@ -34,8 +34,8 @@ namespace RosSharp.RosBridgeClient
 
         public void Awake()
         {
-            string url = GameObject.Find("RosBridgeSettings").GetComponent<rosmaster>().rosBridgeServerURL;
-            RosSocket = ConnectToRos(Protocol, url, OnConnected, OnClosed);
+            RosBridgeServerUrl = GameObject.Find("RosBridgeSettings").GetComponent<rosmaster>().rosBridgeServerURL;
+            RosSocket = ConnectToRos(Protocol, RosBridgeServerUrl, OnConnected, OnClosed);
 
             if (!IsConnected.WaitOne(timeout * 1000))
                 Debug.LogWarning("Failed to connect to RosBridge at: " + RosBridgeServerUrl);
