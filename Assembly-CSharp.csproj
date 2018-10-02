@@ -60,6 +60,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Kinect\ImageListener.cs" />
+    <Compile Include="Assets\Kinect\ImageRawListener.cs" />
+    <Compile Include="Assets\Kinect\KinectView.cs" />
     <Compile Include="Assets\rosmaster.cs" />
     <Compile Include="Assets\RosSharp\Scripts\Extensions\StandardHeaderExtensions.cs" />
     <Compile Include="Assets\RosSharp\Scripts\Extensions\TransformExtensions.cs" />
@@ -303,7 +306,9 @@
     <None Include="Assets\SteamVR\Resources\SteamVR_ClearAll.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Hints\Shaders\ControllerButtonHints.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Samples\BuggyBuddy\Materials\LightCone.shader" />
+    <None Include="Assets\Kinect\DepthGeometryPointSprites.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Teleport\Shaders\Highlight.shader" />
+    <None Include="Assets\Kinect\KinectCommon.cginc" />
     <None Include="Assets\SteamVR\InteractionSystem\Teleport\Shaders\HighlighGlobal.shader" />
     <None Include="Assets\SteamVR\Resources\SteamVR_SphericalProjection.shader" />
     <None Include="Assets\SteamVR\Resources\SteamVR_AlphaOut.shader" />

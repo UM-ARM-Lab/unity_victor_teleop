@@ -27,7 +27,7 @@ namespace RosSharp.RosBridgeClient
 
         public RosSocket RosSocket { get; private set; }
         public enum Protocols { WebSocketSharp, WebSocketNET };
-        public Protocols Protocol;
+        public Protocols Protocol = Protocols.WebSocketNET;
         private string RosBridgeServerUrl = "ws://192.168.0.1:9090";
 
         private ManualResetEvent IsConnected = new ManualResetEvent(false);

@@ -4757,8 +4757,9 @@ GameObject:
   - component: {fileID: 120875177}
   - component: {fileID: 120875176}
   - component: {fileID: 120875175}
+  - component: {fileID: 120875178}
   m_Layer: 0
-  m_Name: Kinect
+  m_Name: Kinect_image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4790,7 +4791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeout: 10
-  Protocol: 0
+  Protocol: 1
 --- !u!224 &120875177
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4810,6 +4811,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &120875178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 120875174}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef6e2677fa36b0c46a9f6d8bd354c686, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /kinect2_roof/qhd/image_depth_rect/compressed
+  TimeStep: 0
+  meshRenderer: {fileID: 1331184818}
 --- !u!1 &120987127
 GameObject:
   m_ObjectHideFlags: 8
@@ -52651,7 +52666,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1331184817}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 0, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 2}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 120875177}
@@ -69128,6 +69143,92 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4816804137994692, guid: f29e5a1280a1330449d7178f8a97928d,
     type: 2}
   m_PrefabInternal: {fileID: 1479383103}
+--- !u!1 &1678448340
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1678448342}
+  - component: {fileID: 1678448341}
+  - component: {fileID: 1678448343}
+  - component: {fileID: 1678448344}
+  - component: {fileID: 1678448345}
+  m_Layer: 0
+  m_Name: Kinect_points
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1678448341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1678448340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db2d199f3d232c42b2215ab97ddec45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorListener: {fileID: 1678448344}
+  depthListener: {fileID: 1678448345}
+  compression: none
+  Material: {fileID: 2100000, guid: 9d52240a62c9d32448ab356f8a71dd3e, type: 2}
+--- !u!4 &1678448342
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1678448340}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &1678448343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1678448340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff98778ae051cfd40a6e4effdf851ebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeout: 10
+  Protocol: 1
+--- !u!114 &1678448344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1678448340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c1f35dc9da90f84c93b1b65b56c96fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /kinect2_roof/sd/image_color_rect/compressed
+  TimeStep: 0
+--- !u!114 &1678448345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1678448340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b85735f0ce3a954bb7f1b44301a1cb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /kinect2_roof/sd/image_depth_rect
+  TimeStep: 0.2
 --- !u!1001 &1678716717
 Prefab:
   m_ObjectHideFlags: 0

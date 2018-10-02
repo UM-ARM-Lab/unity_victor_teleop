@@ -18,28 +18,19 @@ using UnityEngine;
 namespace RosSharp.RosBridgeClient
 {
     [RequireComponent(typeof(RosConnector))]
-    public class ImageSubscriber : Subscriber<Messages.Sensor.CompressedImage>
+    public class ImageListener: Subscriber<Messages.Sensor.CompressedImage>
     {
-        public MeshRenderer meshRenderer;
 
-        private Texture2D texture2D;
+        //private Texture2D texture2D;
         private byte[] imageData;
         private bool isMessageReceived;
 
         protected override void Start()
         {
 			base.Start();
-            texture2D = new Texture2D(1, 1);
-            meshRenderer.material = new Material(Shader.Find("Standard"));
+            //texture2D = new Texture2D(1, 1);
         }
-        private void Update()
-        {
-            if (isMessageReceived)
-            {
-                ProcessMessage();
-            }
 
-        }
 
         protected override void ReceiveMessage(Messages.Sensor.CompressedImage compressedImage)
         {
@@ -47,13 +38,20 @@ namespace RosSharp.RosBridgeClient
             isMessageReceived = true;
         }
 
-        private void ProcessMessage()
+        public bool HasNew()
         {
-            texture2D.LoadImage(imageData);
-            texture2D.Apply();
-            meshRenderer.material.SetTexture("_MainTex", texture2D);
-            isMessageReceived = false;
+            return isMessageReceived;
         }
+
+        public byte[] GetLast()
+        {
+            return imageData;
+            //texture2D.LoadImage(imageData);
+            //texture2D.Apply();
+            //return texture2D;
+        }
+
+
 
     }
 }
