@@ -54,10 +54,11 @@
 						//float worldScaledDepth = depth;// * MillimetersToMetersScale * _WorldScale;
 						//float worldScaledDepth = 1.0 / (4500 * depth * -0.0030711016 + 3.3309495161);
 						float worldScaledDepth = depth * 65;
-						float4 worldPos = float4(textureCoordinates.x, worldScaledDepth, textureCoordinates.y, 1.0);
+						float4 worldPos = float4(-textureCoordinates.y, worldScaledDepth, textureCoordinates.x, 1.0);
 
 						// Center coordinates such that 0,0 is the center in the world					
-						worldPos.xz -= DepthHalfWidthHeight;
+						worldPos.x += DepthHalfWidthHeight[1];
+						worldPos.z -= DepthHalfWidthHeight[0];
 
 						// Data is projected onto the 2D sensor, but knowing the depth and field of view we can reconstruct world space position
 						worldPos.xz *= XYSpread * worldScaledDepth;

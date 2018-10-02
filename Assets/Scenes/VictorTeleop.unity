@@ -4809,7 +4809,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 1024, y: 848}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &120875178
 MonoBehaviour:
@@ -69155,6 +69155,7 @@ GameObject:
   - component: {fileID: 1678448343}
   - component: {fileID: 1678448344}
   - component: {fileID: 1678448345}
+  - component: {fileID: 1678448346}
   m_Layer: 0
   m_Name: Kinect_points
   m_TagString: Untagged
@@ -69229,6 +69230,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Topic: /kinect2_roof/sd/image_depth_rect
   TimeStep: 0.2
+--- !u!114 &1678448346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1678448340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6cd27ba95adab14d85c327244d65eb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /kinect_pose
+  TimeStep: 0
+  PublishedTransform: {fileID: 1678448342}
 --- !u!1001 &1678716717
 Prefab:
   m_ObjectHideFlags: 0
