@@ -45,6 +45,7 @@ namespace RosSharp.RosBridgeClient
 
         public byte[] GetLast()
         {
+            isMessageReceived = false;
             return imageData;
             //texture2D.LoadImage(imageData);
             //texture2D.Apply();

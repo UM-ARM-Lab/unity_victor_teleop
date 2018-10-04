@@ -355,6 +355,12 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="Magick.NET-Q16-x64">
+      <HintPath>C:/Users/bsaund/Documents/ViveVictor/Assets/Plugins/Magick.NET-Q16-x64.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <HintPath>C:/Users/bsaund/Documents/ViveVictor/Assets/Plugins/System.Drawing.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>C:/Users/bsaund/Documents/ViveVictor/Assets/RosSharp/Plugins/Newtonsoft.Json.dll</HintPath>
     </Reference>

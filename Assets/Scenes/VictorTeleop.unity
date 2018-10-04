@@ -4764,7 +4764,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &120875175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52667,7 +52667,7 @@ Transform:
   m_GameObject: {fileID: 1331184817}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
   m_LocalPosition: {x: 0, y: 1, z: 2}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.1024, y: 0.1, z: 0.0848}
   m_Children: []
   m_Father: {fileID: 120875177}
   m_RootOrder: 0
@@ -69156,6 +69156,7 @@ GameObject:
   - component: {fileID: 1678448344}
   - component: {fileID: 1678448345}
   - component: {fileID: 1678448346}
+  - component: {fileID: 1678448347}
   m_Layer: 0
   m_Name: Kinect_points
   m_TagString: Untagged
@@ -69175,7 +69176,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorListener: {fileID: 1678448344}
-  depthListener: {fileID: 1678448345}
+  depthListener: {fileID: 1678448347}
+  depthListenerRaw: {fileID: 1678448345}
+  depth_topic: /kinect2_roof/qhd/image_depth_rect
   compression: none
   Material: {fileID: 2100000, guid: 9d52240a62c9d32448ab356f8a71dd3e, type: 2}
 --- !u!4 &1678448342
@@ -69215,7 +69218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1f35dc9da90f84c93b1b65b56c96fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Topic: /kinect2_roof/sd/image_color_rect/compressed
+  Topic: /kinect2_roof/qhd/image_color_rect/compressed
   TimeStep: 0
 --- !u!114 &1678448345
 MonoBehaviour:
@@ -69228,8 +69231,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b85735f0ce3a954bb7f1b44301a1cb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Topic: /kinect2_roof/sd/image_depth_rect
-  TimeStep: 0.2
+  Topic: /kinect2_roof/qhd/image_depth_rect
+  TimeStep: 0
 --- !u!114 &1678448346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69244,6 +69247,19 @@ MonoBehaviour:
   Topic: /kinect_pose
   TimeStep: 0
   PublishedTransform: {fileID: 1678448342}
+--- !u!114 &1678448347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1678448340}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c1f35dc9da90f84c93b1b65b56c96fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /kinect2_roof/qhd/image_depth_rect/compressed
+  TimeStep: 0
 --- !u!1001 &1678716717
 Prefab:
   m_ObjectHideFlags: 0

@@ -1,10 +1,32 @@
+//sd
+/*
+static const float cx = 255;
+static const float cy = 210;
+
+static const float fx = 365;
+static const float fy = 365; 
+
 static const int DepthWidth = 512;
 static const int DepthHeight = 424;
+*/
+
+//qhd
+static const float cx = 474.23;
+static const float cy = 271.73;
+
+static const float fx = 530.56;
+static const float fy = 531.54;
+
+static const int DepthWidth = 1920/2;
+static const int DepthHeight = 1080/2;
+
+
+
 
 static const float MillimetersToMetersScale = 1.0 / 1000.0;
 
-static const float2 DepthWidthHeight = float2(DepthWidth, DepthHeight);
-static const float2 DepthHalfWidthHeight = DepthWidthHeight / 2.0;
+//static const float2 DepthWidthHeight = float2(DepthWidth, DepthHeight);
+//static const float2 DepthHalfWidthHeight = DepthWidthHeight / 2.0;
 
 static const float SensorHorizontalFOVDegrees = 70.6;
 static const float XYSpread = tan(radians(SensorHorizontalFOVDegrees) * 0.5) / (DepthWidth * 0.5); 
@@ -12,11 +34,12 @@ static const float XYSpread = tan(radians(SensorHorizontalFOVDegrees) * 0.5) / (
 static const float MinDepthMM = 500.0;
 static const float MaxDepthMM = 8000.0;
 
-static const float cx = 254.878;
-static const float cy = 205.395;
 
-static const float fx = 365.456;
-static const float fy = 365.456;
+
+
+
+
+
 
 // vertex offsets for building a quad from a depth pixel
 static const float4 quadOffsets[4] = 
