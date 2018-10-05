@@ -60,9 +60,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Kinect\DepthImageListener.cs" />
     <Compile Include="Assets\Kinect\ImageListener.cs" />
     <Compile Include="Assets\Kinect\ImageRawListener.cs" />
     <Compile Include="Assets\Kinect\KinectView.cs" />
+    <Compile Include="Assets\OpenCVSharpForUnity\Examples\DemoScenes\FaceDetection\FaceDetection.cs" />
+    <Compile Include="Assets\OpenCVSharpForUnity\Examples\DemoScenes\FAST\FAST.cs" />
+    <Compile Include="Assets\OpenCVSharpForUnity\Examples\DemoScenes\HoughLines\HoughLines.cs" />
+    <Compile Include="Assets\OpenCVSharpForUnity\Examples\DemoScenes\Line-following Robot\LineDetection.cs" />
+    <Compile Include="Assets\OpenCVSharpForUnity\Examples\DemoScenes\Line-following Robot\Robot\RobotController.cs" />
+    <Compile Include="Assets\OpenCVSharpForUnity\Examples\DemoScenes\MotionDetection\MotionDetection.cs" />
+    <Compile Include="Assets\OpenCVSharpForUnity\Examples\DemoScenes\SimpleBlobDetection\SimpleBlobDetection.cs" />
+    <Compile Include="Assets\OpenCVSharpForUnity\Examples\DemoScenes\Thresholds\Thresholds.cs" />
+    <Compile Include="Assets\OpenCVSharpForUnity\Examples\MiscScripts\FPSCounter.cs" />
+    <Compile Include="Assets\OpenCVSharpForUnity\Examples\MiscScripts\SceneLoader.cs" />
+    <Compile Include="Assets\OpenCVSharpForUnity\Scripts\CvConvert.cs" />
+    <Compile Include="Assets\OpenCVSharpForUnity\Scripts\CvIntPtr.cs" />
+    <Compile Include="Assets\OpenCVSharpForUnity\Scripts\CvUtil.cs" />
     <Compile Include="Assets\rosmaster.cs" />
     <Compile Include="Assets\RosSharp\Scripts\Extensions\StandardHeaderExtensions.cs" />
     <Compile Include="Assets\RosSharp\Scripts\Extensions\TransformExtensions.cs" />
@@ -308,14 +322,19 @@
     <None Include="Assets\SteamVR\InteractionSystem\Samples\BuggyBuddy\Materials\LightCone.shader" />
     <None Include="Assets\Kinect\DepthGeometryPointSprites.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Teleport\Shaders\Highlight.shader" />
+    <None Include="Assets\OpenCVSharpForUnity\Documentation\LICENSE.txt" />
+    <None Include="Assets\OpenCVSharpForUnity\StreamingAssets\haarcascade_frontalface_alt2.xml" />
     <None Include="Assets\Kinect\KinectCommon.cginc" />
+    <None Include="Assets\OpenCVSharpForUnity\README_ANDROID.txt" />
     <None Include="Assets\SteamVR\InteractionSystem\Teleport\Shaders\HighlighGlobal.shader" />
     <None Include="Assets\SteamVR\Resources\SteamVR_SphericalProjection.shader" />
+    <None Include="Assets\OpenCVSharpForUnity\Plugins\iOS\OpenCvSharpExtern.framework\CMakeLists.txt" />
     <None Include="Assets\SteamVR\Resources\SteamVR_AlphaOut.shader" />
     <None Include="Assets\SteamVR\readme.txt" />
     <None Include="Assets\SteamVR\InteractionSystem\Core\Shaders\Silhouette.shader" />
     <None Include="Assets\SteamVR\Resources\SteamVR_ColorOut.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Core\Shaders\SeeThru.shader" />
+    <None Include="Assets\OpenCVSharpForUnity\README_FIRST.txt" />
     <None Include="Assets\SteamVR\InteractionSystem\Readme_InteractionSystem.txt" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/bsaund/Documents/ViveVictor/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
@@ -527,11 +546,8 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
-    <Reference Include="Magick.NET-Q16-x64">
-      <HintPath>C:/Users/bsaund/Documents/ViveVictor/Assets/Plugins/Magick.NET-Q16-x64.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Drawing">
-      <HintPath>C:/Users/bsaund/Documents/ViveVictor/Assets/Plugins/System.Drawing.dll</HintPath>
+    <Reference Include="OpenCvSharp">
+      <HintPath>C:/Users/bsaund/Documents/ViveVictor/Assets/OpenCVSharpForUnity/Plugins/OpenCvSharp.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>C:/Users/bsaund/Documents/ViveVictor/Assets/RosSharp/Plugins/Newtonsoft.Json.dll</HintPath>

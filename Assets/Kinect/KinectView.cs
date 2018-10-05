@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using RosSharp.RosBridgeClient;
-using ImageMagick;
+using Unity.Collections;
+
 
 public class KinectView : MonoBehaviour {
 
     public RosSharp.RosBridgeClient.ImageListener colorListener;
-    public RosSharp.RosBridgeClient.ImageListener depthListener;
+    public RosSharp.RosBridgeClient.DepthImageListener depthListener;
     public RosSharp.RosBridgeClient.ImageRawListener depthListenerRaw;
+    public Transform kinect_offset;
 
     public string depth_topic;
 
     //private WebsocketClient wsc;
-    string depthTopic;
-    string colorTopic;
+
     //int framerate = 100;
     public string compression = "none"; //"png" is the other option, haven't tried it yet though
     string depthMessage;
@@ -54,17 +55,47 @@ public class KinectView : MonoBehaviour {
         }
         if(depthListener.HasNew())
         {
-            long loc = 519360;
-            int x = 480;
-            int y = 270;
-            byte[] raw = depthListener.GetLast();
+            //long loc = 519360;
+            //int x = 480;
+            //int y = 270;
+            //byte[] raw = depthListener.GetLast();
             //Debug.Log("Raw length: " + raw.Length);
             //Debug.Log("Raw: " + raw[0] + ", " + raw[1]);
             //new ImageMagick.MagickReadSettings
-            MagickReadSettings settings = new MagickReadSettings();
+            //MagickReadSettings settings = new MagickReadSettings();
             //settings.
-            ImageMagick.MagickImage image = new ImageMagick.MagickImage(raw, settings);
-            
+            //ImageMagick.MagickImage image = new ImageMagick.MagickImage(raw, settings);
+
+            //Mat mat = new Mat(width, height, MatType.CV_16U, raw);
+            //Mat mat = Mat.FromImageData(raw, ImreadModes.AnyDepth);
+
+            //Mat mat = Mat.ImDecode(depthListener.GetLast(), ImreadModes.AnyDepth);
+
+            //Debug.Log("Loaded mat");
+            //Debug.Log("Properties: channels " + mat.Channels() + 
+            //    ", depth " + mat.Depth() + 
+            //    ", type " + mat.Type() + 
+            //    ", size " + mat.Size());
+            //mat.ImEncode();
+
+            //Mat mat2 = new Mat();
+            //mat.ConvertTo(mat2, MatType.CV_16U);
+            //Debug.Log("opencv size: " + mat.ToBytes().Length);
+            //Debug.Log("mat2 size: " + mat.ToBytes(".raw").Length);
+            //short[] data = new short[960 * 540];
+            //mat.GetArray(0, 0, data);
+            //mat.GetArray()
+            //byte[] a = data;
+            // NativeArray<short> a = new NativeArray<short>(data, Allocator.Temp);
+
+
+
+            //depthTexture.LoadRawTextureData<short>(a);
+            depthTexture.LoadRawTextureData<short>(depthListener.GetLast());
+
+            //Debug.Log("data size: " + data.Length);
+            //Debug.Log("sizeof(short): " + sizeof(short));
+
             /*
             //System.Drawing.Bitmap bmp = image.ToBitmap(System.Drawing.Imaging.ImageFormat.Bmp);
             Debug.Log("initial      depth: " + image.Depth +
@@ -87,8 +118,8 @@ public class KinectView : MonoBehaviour {
             //depthTexture.LoadRawTextureData(image.ToBitmap().);
             //depthTexture.Apply();
 
-            
-            image.Format = ImageMagick.MagickFormat.Gray;
+
+            //image.Format = ImageMagick.MagickFormat.Gray;
             //ImageMagick.MagickFormat.
 
             //Debug.Log(image.FormatInfo);
@@ -105,9 +136,10 @@ public class KinectView : MonoBehaviour {
             Debug.Log("Pixel: " + image.GetPixels()[480, 270].GetChannel(0));
             */
 
-            depthTexture.LoadRawTextureData(image.ToByteArray());
-            
+            //depthTexture.LoadRawTextureData(image.ToByteArray());
+
             depthTexture.Apply();
+            //a.Dispose();
             //Debug.Log(depthTexture.GetPixel(500, 200));
         }
         if(depthListenerRaw.HasNew())
@@ -125,16 +157,17 @@ public class KinectView : MonoBehaviour {
             depthTexture.LoadRawTextureData(raw);
             depthTexture.Apply();
 
-
+            /*
   
             MagickReadSettings settings = new MagickReadSettings();
             settings.Width = 960;
             settings.Height = 540;
             settings.Format = MagickFormat.Gray;
             settings.SetDefine("Depth", "16");
+            */
 
            
-            ImageMagick.MagickImage image = new ImageMagick.MagickImage(raw, settings);
+            //ImageMagick.MagickImage image = new ImageMagick.MagickImage(raw, settings);
             //image.Read(raw, settings);
             /*ImageMagick.MagickImage image = new ImageMagick.MagickImage();
             var width = 960;
@@ -144,6 +177,7 @@ public class KinectView : MonoBehaviour {
             var pixelStorageSettings = new PixelStorageSettings(width, height, storageType, mapping);
             image.ReadPixels(raw, pixelStorageSettings);
             */
+            /*
             Debug.Log("Raw depth: " + image.Depth +
                        ", channels: " + image.ChannelCount +
                        ", datasize: " + image.ToByteArray().Length +
@@ -155,12 +189,13 @@ public class KinectView : MonoBehaviour {
 
             byte[] tmp = image.ToByteArray();
             tmp[loc] = raw[loc];
-            ImageMagick.MagickImage img2 = new ImageMagick.MagickImage(tmp, settings);
+            //ImageMagick.MagickImage img2 = new ImageMagick.MagickImage(tmp, settings);
             Debug.Log("Reread byte: " +
                 Disp(img2.ToByteArray()[loc]) + ", " +
                 Disp(img2.ToByteArray()[loc + 1]));
 
             Debug.Log("Pixel: " + image.GetPixels()[x, y].GetChannel(0));
+            */
         }
 
     }
@@ -177,8 +212,11 @@ public class KinectView : MonoBehaviour {
         Material.SetTexture("_MainTex", depthTexture);
         Material.SetTexture("_ColorTex", colorTexture);
         Material.SetPass(0);
-
-        m = Matrix4x4.TRS(this.transform.position, this.transform.rotation, this.transform.localScale);
+        //Transform t = this.transform * kinect_offset;
+        //m = Matrix4x4.TRS(this.transform.position + kinect_offset.position, 
+        //    this.transform.rotation, this.transform.localScale);
+        m = Matrix4x4.TRS(kinect_offset.position,
+                          kinect_offset.rotation, kinect_offset.localScale);
         Material.SetMatrix("transformationMatrix", m);
 
 

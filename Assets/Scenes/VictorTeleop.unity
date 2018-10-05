@@ -30364,6 +30364,7 @@ GameObject:
   - component: {fileID: 765219798}
   - component: {fileID: 765219797}
   - component: {fileID: 765219796}
+  - component: {fileID: 765219800}
   - component: {fileID: 765219795}
   - component: {fileID: 765219794}
   m_Layer: 0
@@ -30578,6 +30579,145 @@ Transform:
   m_Father: {fileID: 1972228125}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &765219800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 765219793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fe4cf3b1dd3507418f7ec019f9193ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /joint_states
+  TimeStep: 0
+  JointNames:
+  - victor_left_arm_joint_1
+  - victor_left_arm_joint_2
+  - victor_left_arm_joint_3
+  - victor_left_arm_joint_4
+  - victor_left_arm_joint_5
+  - victor_left_arm_joint_6
+  - victor_left_arm_joint_7
+  - victor_left_gripper_fingerA_knuckle
+  - victor_left_gripper_fingerA_joint_2
+  - victor_left_gripper_fingerA_joint_3
+  - victor_left_gripper_fingerA_joint_4
+  - victor_left_gripper_fingerB_knuckle
+  - victor_left_gripper_fingerB_joint_2
+  - victor_left_gripper_fingerB_joint_3
+  - victor_left_gripper_fingerB_joint_4
+  - victor_left_gripper_fingerC_knuckle
+  - victor_left_gripper_fingerC_joint_2
+  - victor_left_gripper_fingerC_joint_3
+  - victor_left_gripper_fingerC_joint_4
+  - victor_left_gripper_fingerA_knuckle
+  - victor_left_gripper_fingerA_joint_2
+  - victor_left_gripper_fingerA_joint_3
+  - victor_left_gripper_fingerA_joint_4
+  - victor_left_gripper_fingerB_knuckle
+  - victor_left_gripper_fingerB_joint_2
+  - victor_left_gripper_fingerB_joint_3
+  - victor_left_gripper_fingerB_joint_4
+  - victor_left_gripper_fingerC_knuckle
+  - victor_left_gripper_fingerC_joint_2
+  - victor_left_gripper_fingerC_joint_3
+  - victor_left_gripper_fingerC_joint_4
+  - victor_right_arm_joint_1
+  - victor_right_arm_joint_2
+  - victor_right_arm_joint_3
+  - victor_right_arm_joint_4
+  - victor_right_arm_joint_5
+  - victor_right_arm_joint_6
+  - victor_right_arm_joint_7
+  - victor_right_gripper_fingerA_knuckle
+  - victor_right_gripper_fingerA_joint_2
+  - victor_right_gripper_fingerA_joint_3
+  - victor_right_gripper_fingerA_joint_4
+  - victor_right_gripper_fingerB_knuckle
+  - victor_right_gripper_fingerB_joint_2
+  - victor_right_gripper_fingerB_joint_3
+  - victor_right_gripper_fingerB_joint_4
+  - victor_right_gripper_fingerC_knuckle
+  - victor_right_gripper_fingerC_joint_2
+  - victor_right_gripper_fingerC_joint_3
+  - victor_right_gripper_fingerC_joint_4
+  - victor_right_gripper_fingerA_knuckle
+  - victor_right_gripper_fingerA_joint_2
+  - victor_right_gripper_fingerA_joint_3
+  - victor_right_gripper_fingerA_joint_4
+  - victor_right_gripper_fingerB_knuckle
+  - victor_right_gripper_fingerB_joint_2
+  - victor_right_gripper_fingerB_joint_3
+  - victor_right_gripper_fingerB_joint_4
+  - victor_right_gripper_fingerC_knuckle
+  - victor_right_gripper_fingerC_joint_2
+  - victor_right_gripper_fingerC_joint_3
+  - victor_right_gripper_fingerC_joint_4
+  JointStateWriters:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 1663323039}
+  - {fileID: 1528393245}
+  - {fileID: 1696285576}
+  - {fileID: 280592707}
+  - {fileID: 608453456}
+  - {fileID: 1984358504}
+  - {fileID: 1241917566}
+  - {fileID: 499581616}
+  - {fileID: 1526993174}
+  - {fileID: 1214419263}
+  - {fileID: 75399030}
+  - {fileID: 1121195045}
+  - {fileID: 1952786693}
+  - {fileID: 349891564}
+  - {fileID: 1269359200}
+  - {fileID: 1449657156}
+  - {fileID: 394544887}
+  - {fileID: 692592612}
+  - {fileID: 1401561895}
+  - {fileID: 1521578776}
+  - {fileID: 1938427322}
+  - {fileID: 1970786944}
+  - {fileID: 1465198828}
+  - {fileID: 1682049943}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 1078723819}
+  - {fileID: 549559668}
+  - {fileID: 764389823}
+  - {fileID: 1735674779}
+  - {fileID: 1648008496}
+  - {fileID: 1232920365}
+  - {fileID: 511400696}
+  - {fileID: 1674993171}
+  - {fileID: 2132007019}
+  - {fileID: 1333001306}
+  - {fileID: 2037660700}
+  - {fileID: 160777370}
+  - {fileID: 1901202186}
+  - {fileID: 283192793}
+  - {fileID: 592332082}
+  - {fileID: 1225438565}
+  - {fileID: 2046276863}
+  - {fileID: 802190796}
+  - {fileID: 1126374024}
+  - {fileID: 1358032134}
+  - {fileID: 426841361}
+  - {fileID: 2045222368}
+  - {fileID: 1173947384}
+  - {fileID: 550556636}
 --- !u!1 &766663792
 GameObject:
   m_ObjectHideFlags: 8
@@ -35913,6 +36053,125 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a7c27a46b80a6445bffe44ea9e91cd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &923435478
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 923435485}
+  - component: {fileID: 923435484}
+  - component: {fileID: 923435483}
+  - component: {fileID: 923435482}
+  - component: {fileID: 923435481}
+  - component: {fileID: 923435480}
+  - component: {fileID: 923435479}
+  m_Layer: 0
+  m_Name: Kinect_head_points
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &923435479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 923435478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e5ad3781059f5140957bfe5f5c31c90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /kinect2_victor_head/qhd/image_depth_rect/compressed
+  TimeStep: 0
+--- !u!114 &923435480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 923435478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6cd27ba95adab14d85c327244d65eb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /kinect_pose_victor_head
+  TimeStep: 0
+  PublishedTransform: {fileID: 923435485}
+--- !u!114 &923435481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 923435478}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b85735f0ce3a954bb7f1b44301a1cb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /kinect2_victor_head/qhd/image_depth_rect
+  TimeStep: 0
+--- !u!114 &923435482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 923435478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c1f35dc9da90f84c93b1b65b56c96fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /kinect2_victor_head/qhd/image_color_rect/compressed
+  TimeStep: 0
+--- !u!114 &923435483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 923435478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff98778ae051cfd40a6e4effdf851ebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeout: 10
+  Protocol: 1
+--- !u!114 &923435484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 923435478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db2d199f3d232c42b2215ab97ddec45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorListener: {fileID: 923435482}
+  depthListener: {fileID: 923435479}
+  depthListenerRaw: {fileID: 923435481}
+  kinect_offset: {fileID: 1949788622}
+  depth_topic: /kinect2_roof/qhd/image_depth_rect
+  compression: none
+  Material: {fileID: 2100000, guid: 9d52240a62c9d32448ab356f8a71dd3e, type: 2}
+--- !u!4 &923435485
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 923435478}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1949788622}
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1001 &924602097
 Prefab:
   m_ObjectHideFlags: 0
@@ -69158,12 +69417,12 @@ GameObject:
   - component: {fileID: 1678448346}
   - component: {fileID: 1678448347}
   m_Layer: 0
-  m_Name: Kinect_points
+  m_Name: Kinect_roof_points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1678448341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69178,6 +69437,7 @@ MonoBehaviour:
   colorListener: {fileID: 1678448344}
   depthListener: {fileID: 1678448347}
   depthListenerRaw: {fileID: 1678448345}
+  kinect_offset: {fileID: 1706851202}
   depth_topic: /kinect2_roof/qhd/image_depth_rect
   compression: none
   Material: {fileID: 2100000, guid: 9d52240a62c9d32448ab356f8a71dd3e, type: 2}
@@ -69190,7 +69450,8 @@ Transform:
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 1, y: 1, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1706851202}
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
@@ -69226,7 +69487,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1678448340}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b85735f0ce3a954bb7f1b44301a1cb1, type: 3}
   m_Name: 
@@ -69244,7 +69505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6cd27ba95adab14d85c327244d65eb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Topic: /kinect_pose
+  Topic: /kinect_pose_roof
   TimeStep: 0
   PublishedTransform: {fileID: 1678448342}
 --- !u!114 &1678448347
@@ -69253,9 +69514,9 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1678448340}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c1f35dc9da90f84c93b1b65b56c96fc, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e5ad3781059f5140957bfe5f5c31c90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Topic: /kinect2_roof/qhd/image_depth_rect/compressed
@@ -71142,6 +71403,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06d52ff46881bce4a865382c85a05965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1706851201
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1706851202}
+  m_Layer: 0
+  m_Name: Kinect_fine_adjustment
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1706851202
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1706851201}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.01, y: 0.04, z: 0.03}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1678448342}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1707704171 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4352354286451124, guid: 11531cc70deb9f64aad452485894f2e5,
@@ -73118,7 +73407,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1747997876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81301,6 +81590,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06d52ff46881bce4a865382c85a05965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1949788621
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1949788622}
+  m_Layer: 0
+  m_Name: Kinect_fine_adjustment
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1949788622
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1949788621}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.02, z: 0.05}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 923435485}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1950961894
 Prefab:
   m_ObjectHideFlags: 0
