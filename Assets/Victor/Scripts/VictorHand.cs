@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
+using RosSharp.RosBridgeClient;
 
 namespace Valve.VR.InteractionSystem.Sample
 {
@@ -11,49 +12,20 @@ namespace Valve.VR.InteractionSystem.Sample
     [RequireComponent(typeof(RosSharp.RosBridgeClient.HandTargetPublisher))]
     public class VictorHand : MonoBehaviour
     {
-        //public Transform modelJoystick;
-        //public float joystickRot = 20;
-
-        //public Transform modelTrigger;
-        //public float triggerRot = 20;
-
-        //public BuggyBuddy buggy;
-
-        //public Transform buttonBrake;
-        //public Transform buttonReset;
-
-        //ui stuff
-
-        //public Canvas ui_Canvas;
-        //public Image ui_rpm;
-        //public Image ui_speed;
-        //public RectTransform ui_steer;
-
-        //public float ui_steerangle;
-
-        //public Vector2 ui_fillAngles;
-
-        //public Transform resetToPoint;
-
         [SteamVR_DefaultActionSet("default")]
         public SteamVR_ActionSet actionSet;
-
-        //[SteamVR_DefaultAction("Steering", "buggy")]
-        //public SteamVR_Action_Vector2 a_steering;
-
-        //[SteamVR_DefaultAction("Throttle", "buggy")]
-        //public SteamVR_Action_Single a_trigger;
 
         [SteamVR_DefaultAction("GrabGrip", "default")]
         public SteamVR_Action_Boolean a_grip;
 
-        public Transform hand_target;
         public Transform hand_real;
 
-        //[SteamVR_DefaultAction("Reset", "buggy")]
-        //public SteamVR_Action_Boolean a_reset;
+        public Material validIkMaterial;
+        public Material invalidIkMaterial;
+        public StringListener validIkListener;
 
-        private float usteer;
+
+        public GameObject arm;
 
         private Interactable interactable;
 
@@ -73,10 +45,6 @@ namespace Valve.VR.InteractionSystem.Sample
             interactable = GetComponent<Interactable>();
             interactable.activateActionSetOnAttach = actionSet;
 
-            StartCoroutine(DoBuzz());
-            //buggy.controllerReference = transform;
-            //initialScale = buggy.transform.localScale;
-            //hand_target = hand_real;
         }
 
         private void Update()
@@ -85,13 +53,12 @@ namespace Valve.VR.InteractionSystem.Sample
             //float throttle = 0;
             //float brake = 0;
 
-            bool reset = false;
-
             //bool b_brake = false;
             //bool b_reset = false;
             bool gripped = false;
 
-            
+
+
             if (interactable.attachedToHand)
             {
                 SteamVR_Input_Sources hand = interactable.attachedToHand.handType;
@@ -106,93 +73,59 @@ namespace Valve.VR.InteractionSystem.Sample
                 RosSharp.RosBridgeClient.HandTargetPublisher hand_target_pub = 
                     GetComponent<RosSharp.RosBridgeClient.HandTargetPublisher>();
                 gripper_pub.Publish(gripped ? 1 : 0);
-                hand_target_pub.PublishPose(hand_target);
+                hand_target_pub.PublishPose(this.transform);
                 //b_brake = a_brake.GetState(hand);
                 //b_reset = a_reset.GetState(hand);
                 //brake = b_brake ? 1 : 0;
                 //reset = a_reset.GetStateDown(hand);
+
+                SetArmVisibility(true);
+                if (validIkListener.HasNew())
+                {
+                    bool validIk = validIkListener.GetLast().data == "valid";
+                    SetHandColor(validIk ? validIkMaterial : invalidIkMaterial);
+                    if (!validIk)
+                    {
+                        interactable.attachedToHand.TriggerHapticPulse((ushort)10000);
+                    }
+                }
+            }
+            else
+            {
+                SetArmVisibility(false);
+                this.transform.position = hand_real.transform.position;
+                this.transform.rotation = hand_real.transform.rotation;
+                this.transform.localScale = hand_real.transform.localScale;
+                SetHandColor(validIkMaterial);
             }
 
-            if (reset && resettingRoutine == null)
+        }
+
+        private void SetHandColor(Material m)
+        {
+
+            foreach (Renderer r in gameObject.GetComponentsInChildren<Renderer>())
             {
-                resettingRoutine = StartCoroutine(DoReset());
+                r.material = m;
             }
 
-            /*if (ui_Canvas != null)
+        }
+
+        private void SetArmVisibility(bool vis)
+        {
+            /*
+            var links = gameObject.GetComponentsInChildren<RosSharp.Urdf.UrdfLink>();
+            foreach (var link in links)
             {
-                ui_Canvas.gameObject.SetActive(interactable.attachedToHand);
-
-                usteer = Mathf.Lerp(usteer, steer.x, Time.deltaTime * 9);
-                ui_steer.localEulerAngles = Vector3.forward * usteer * -ui_steerangle;
-                ui_rpm.fillAmount = Mathf.Lerp(ui_rpm.fillAmount, Mathf.Lerp(ui_fillAngles.x, ui_fillAngles.y, throttle), Time.deltaTime * 4);
-                //float speedLim = 40;
-                //ui_speed.fillAmount = Mathf.Lerp(ui_fillAngles.x, ui_fillAngles.y, 1 - (Mathf.Exp(-buggy.speed / speedLim)));
-
+                foreach (Renderer r in link.GetComponentsInChildren<Renderer>())
+                {
+                    r.enabled = vis;
+                }
             }
             */
-
-            //modelJoystick.localRotation = joySRot;
-            /*if (input.AttachedHand != null && input.AttachedHand.IsLeft)
+            foreach (Renderer r in arm.GetComponentsInChildren<Renderer>())
             {
-                Joystick.Rotate(steer.y * -joystickRot, steer.x * -joystickRot, 0, Space.Self);
-            }
-            else if (input.AttachedHand != null && input.AttachedHand.IsRight)
-            {
-                Joystick.Rotate(steer.y * -joystickRot, steer.x * joystickRot, 0, Space.Self);
-            }
-            else*/
-            //{
-            //modelJoystick.Rotate(steer.y * -joystickRot, steer.x * -joystickRot, 0, Space.Self);
-            //}
-
-            //modelTrigger.localRotation = trigSRot;
-            //modelTrigger.Rotate(throttle * -triggerRot, 0, 0, Space.Self);
-            //buttonBrake.localScale = new Vector3(1, 1, b_brake ? 0.4f : 1.0f);
-            //buttonReset.localScale = new Vector3(1, 1, b_reset ? 0.4f : 1.0f);
-
-            //buggy.steer = steer;
-            //buggy.throttle = throttle;
-            //buggy.handBrake = brake;
-            //buggy.controllerReference = transform;
-        }
-
-        private IEnumerator DoReset()
-        {
-            float startTime = Time.time;
-            float overTime = 1f;
-            float endTime = startTime + overTime;
-
-            //buggy.transform.position = resetToPoint.transform.position;
-            //buggy.transform.rotation = resetToPoint.transform.rotation;
-            //buggy.transform.localScale = initialScale * 0.1f;
-
-            while (Time.time < endTime)
-            {
-                //buggy.transform.localScale = Vector3.Lerp(buggy.transform.localScale, initialScale, Time.deltaTime * 5f);
-                yield return null;
-            }
-
-            //buggy.transform.localScale = initialScale;
-
-            resettingRoutine = null;
-        }
-
-        private float buzztimer;
-        private IEnumerator DoBuzz()
-        {
-            while (true)
-            {
-                while (buzztimer < 1)
-                {
-                    //buzztimer += Time.deltaTime * buggy.mvol * 70;
-                    yield return null;
-                }
-
-                buzztimer = 0;
-                if (interactable.attachedToHand)
-                {
-                    //interactable.attachedToHand.TriggerHapticPulse((ushort)Mathf.RoundToInt(300 * Mathf.Lerp(1.0f, 0.6f, buggy.mvol)));
-                }
+                r.enabled = vis;
             }
         }
     }
