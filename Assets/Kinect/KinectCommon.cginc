@@ -11,6 +11,7 @@ static const int DepthHeight = 424;
 */
 
 //qhd
+
 static const float cx = 474.23;
 static const float cy = 271.73;
 
@@ -22,6 +23,21 @@ static const int DepthHeight = 1080/2;
 
 
 
+//hd
+/*
+static const float cx = 965;
+static const float cy = 536;
+
+static const float fx = 1068;
+static const float fy = 1068;
+
+
+static const int DepthWidth = 1920;
+static const int DepthHeight = 1080;
+*/
+
+
+
 
 static const float MillimetersToMetersScale = 1.0 / 1000.0;
 
@@ -29,7 +45,7 @@ static const float MillimetersToMetersScale = 1.0 / 1000.0;
 //static const float2 DepthHalfWidthHeight = DepthWidthHeight / 2.0;
 
 static const float SensorHorizontalFOVDegrees = 70.6;
-static const float XYSpread = tan(radians(SensorHorizontalFOVDegrees) * 0.5) / (DepthWidth * 0.5); 
+static const float XYSpread = 2*tan(radians(SensorHorizontalFOVDegrees) * 0.5) / (DepthWidth * 0.5); 
 
 static const float MinDepthMM = 500.0;
 static const float MaxDepthMM = 8000.0;

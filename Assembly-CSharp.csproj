@@ -66,6 +66,7 @@
     <Compile Include="Assets\Kinect\KinectView.cs" />
     <Compile Include="Assets\Kinect\Listener.cs" />
     <Compile Include="Assets\Kinect\StringListener.cs" />
+    <Compile Include="Assets\MakeInvisible.cs" />
     <Compile Include="Assets\OpenCVSharpForUnity\Examples\DemoScenes\FaceDetection\FaceDetection.cs" />
     <Compile Include="Assets\OpenCVSharpForUnity\Examples\DemoScenes\FAST\FAST.cs" />
     <Compile Include="Assets\OpenCVSharpForUnity\Examples\DemoScenes\HoughLines\HoughLines.cs" />

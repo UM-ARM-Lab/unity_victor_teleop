@@ -27,13 +27,15 @@ namespace RosSharp.RosBridgeClient
         //private Texture2D texture2D;
         private bool hasNew;
         private NativeArray<short> decompressedDepth;
-        private JobHandle jobHandle;
+        public int width;
+        public int height;
+
 
         protected override void Start()
         {
 			base.Start();
             //texture2D = new Texture2D(1, 1);
-            decompressedDepth = new NativeArray<short>(960 * 540, Allocator.Persistent);
+            decompressedDepth = new NativeArray<short>(width * height, Allocator.Persistent);
             hasNew = false;
         }
 
@@ -42,7 +44,7 @@ namespace RosSharp.RosBridgeClient
         {
 
             Mat mat = Mat.ImDecode(compressedImage.data, ImreadModes.AnyDepth);
-            short[] data = new short[960 * 540];
+            short[] data = new short[width * height];
             mat.GetArray(0, 0, data);
             decompressedDepth.CopyFrom(data);
             hasNew = true;
@@ -90,18 +92,6 @@ namespace RosSharp.RosBridgeClient
 
     }
 
-    public struct DecompressDepthJob : IJob
-    {
-        public NativeArray<short> decompressed;
-        public NativeArray<byte> compressed;
 
-        public void Execute()
-        {
-            Mat mat = Mat.ImDecode(compressed.ToArray(), ImreadModes.AnyDepth);
-            short[] data = new short[960 * 540];
-            mat.GetArray(0, 0, data);
-            decompressed.CopyFrom(data);
-        }
-    }
 }
 
