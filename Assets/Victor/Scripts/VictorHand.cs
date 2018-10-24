@@ -23,6 +23,10 @@ namespace Valve.VR.InteractionSystem.Sample
         public Material validIkMaterial;
         public Material invalidIkMaterial;
         public StringListener validIkListener;
+        public WrenchStampedListener wrenchStampedListener;
+
+        public double forceThreshold = 0;
+        public double forceMax = 0;
 
 
         public GameObject arm;
@@ -57,6 +61,21 @@ namespace Valve.VR.InteractionSystem.Sample
             //bool b_reset = false;
             bool gripped = false;
 
+            if (wrenchStampedListener != null)
+            {
+                //RosSharp.RosBridgeClient.Messages.Geometry.Wrench t = wrenchListener.GetLast();
+                RosSharp.RosBridgeClient.Messages.Geometry.WrenchStamped t = wrenchStampedListener.GetLast();
+                
+                if(t == null)
+                {
+                    Debug.Log("Null twist");
+                }
+                else
+                {
+                    //Debug.Log(t.wrench.force.x);
+                }
+                
+            }
 
 
             if (interactable.attachedToHand)
@@ -78,6 +97,19 @@ namespace Valve.VR.InteractionSystem.Sample
                 //b_reset = a_reset.GetState(hand);
                 //brake = b_brake ? 1 : 0;
                 //reset = a_reset.GetStateDown(hand);
+
+                if (wrenchStampedListener != null &&
+                    wrenchStampedListener.GetLast() != null)
+                {
+                    var f = wrenchStampedListener.GetLast().wrench.force;
+                    float fsq = (f.x * f.x + f.y * f.y + f.z * f.z);
+
+                    if(fsq > forceThreshold * forceThreshold)
+                    {
+                        var a = System.Math.Min(1, Mathf.Sqrt(fsq) / forceMax);
+                        interactable.attachedToHand.TriggerHapticPulse((ushort)(3000*a));
+                    }
+                }
 
                 SetArmVisibility(true);
                 if (validIkListener.HasNew())

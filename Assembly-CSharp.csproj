@@ -320,6 +320,8 @@
     <Compile Include="Assets\Victor\Scripts\HandInteractable.cs" />
     <Compile Include="Assets\Victor\Scripts\HandTargetPublisher.cs" />
     <Compile Include="Assets\Victor\Scripts\VictorHand.cs" />
+    <Compile Include="Assets\Victor\Scripts\WrenchListener.cs" />
+    <Compile Include="Assets\Victor\Scripts\WrenchStampedListener.cs" />
     <None Include="Assets\SteamVR\Resources\SteamVR_Fade.shader" />
     <None Include="Assets\SteamVR\Resources\SteamVR_ClearAll.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Hints\Shaders\ControllerButtonHints.shader" />
