@@ -315,6 +315,7 @@
     <Compile Include="Assets\SteamVR_Input\ActionObjects\SteamVR_Input_ActionSet_platformer_In.cs" />
     <Compile Include="Assets\SteamVR_Input\SteamVR_Input_Actions.cs" />
     <Compile Include="Assets\SteamVR_Input\SteamVR_Input_ActionSets.cs" />
+    <Compile Include="Assets\Victor\Scripts\ControlButtonRealVictorVis.cs" />
     <Compile Include="Assets\Victor\Scripts\GripperPublisher.cs" />
     <Compile Include="Assets\Victor\Scripts\HandInteractable.cs" />
     <Compile Include="Assets\Victor\Scripts\HandTargetPublisher.cs" />
