@@ -42,30 +42,11 @@ namespace RosSharp.RosBridgeClient
 
         protected override void ReceiveMessage(Messages.Sensor.CompressedImage compressedImage)
         {
-
             Mat mat = Mat.ImDecode(compressedImage.data, ImreadModes.AnyDepth);
             short[] data = new short[width * height];
             mat.GetArray(0, 0, data);
             decompressedDepth.CopyFrom(data);
             hasNew = true;
-            /*
-            if (hasRecievedData && !jobHandle.IsCompleted)
-            {
-                return;
-            }
-            decompressedDepth.Dispose();
-            decompressedDepth = new NativeArray<short>(960 * 540, Allocator.Persistent);
-            hasRecievedData = true;
-            hasNew = true;
-
-
-            DecompressDepthJob job = new DecompressDepthJob();
-            job.compressed = new NativeArray<byte>(compressedImage.data, Allocator.TempJob);
-            job.decompressed = decompressedDepth;
-            JobHandle h = job.Schedule();
-
-            h.Complete();
-            job.compressed.Dispose();*/
         }
 
         public bool HasNew()

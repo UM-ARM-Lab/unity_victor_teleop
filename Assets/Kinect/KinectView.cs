@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using OpenCvSharp;
 using RosSharp.RosBridgeClient;
 using Unity.Collections;
 
@@ -41,8 +42,9 @@ public class KinectView : MonoBehaviour {
         height = depthListener.height;
         // Create a texture for the depth image and color image
         depthTexture = new Texture2D(width, height, TextureFormat.R16, false);
-        //depthTexture = new Texture2D(width, height, TextureFormat.RG16, false);
-        colorTexture = new Texture2D(2, 2);
+        //colorTexture = new Texture2D(2, 2);
+        colorTexture = new Texture2D(width, height, TextureFormat.RGB24, false);
+
 
 
         //InvokeRepeating("UpdateTexture", 0.1f, 0.1f);
@@ -50,101 +52,49 @@ public class KinectView : MonoBehaviour {
 
     void Update()
     {
-        if(colorListener.HasNew())
+        
+        if (colorListener.HasNew())
         {
             //Debug.Log("color texture updated");
+            UnityEngine.Profiling.Profiler.BeginSample("Apply Color");
             colorTexture.LoadImage(colorListener.GetLast());
             colorTexture.Apply();
+            UnityEngine.Profiling.Profiler.EndSample();
+
+            /*
+            byte[] compressedImage = colorListener.GetLast();
+            Mat mat = Mat.ImDecode(compressedImage);
+            Vec3b[] decompressed = new Vec3b[width * height];
+            //int[] decompressed = new int[width * height];
+            //mat.GetArray(0, 0, decompressed);
+            //NativeArray<int> tmparr = new NativeArray<int>(width * height, Allocator.Temp);
+            byte[] tmp = new byte[decompressed.Length * 3];
+            //byte[] a = mat.ImageDat
+            mat.
+            //Buffer.BlockCopy(decompressed, 0, tmp, 0, tmp.Length);
+            //mat.Total
+            //mat.GetArray(0, 0, tmp);
+            //tmparr.CopyFrom(decompressed);
+            colorTexture.LoadRawTextureData(tmp);
+            //colorTexture.LoadRawTextureData(decompressed);
+            colorTexture.Apply();
+            //tmparr.Dispose();
+            Debug.Log("channels: " + mat.Channels() + ", " + mat.Depth() + ", " 
+                + mat.Total() + ", " + mat.ElemSize());
+                */
+            
+
+
+
         }
-        if(depthListener.HasNew())
+        if (depthListener.HasNew())
         {
-            //long loc = 519360;
-            //int x = 480;
-            //int y = 270;
-            //byte[] raw = depthListener.GetLast();
-            //Debug.Log("Raw length: " + raw.Length);
-            //Debug.Log("Raw: " + raw[0] + ", " + raw[1]);
-            //new ImageMagick.MagickReadSettings
-            //MagickReadSettings settings = new MagickReadSettings();
-            //settings.
-            //ImageMagick.MagickImage image = new ImageMagick.MagickImage(raw, settings);
-
-            //Mat mat = new Mat(width, height, MatType.CV_16U, raw);
-            //Mat mat = Mat.FromImageData(raw, ImreadModes.AnyDepth);
-
-            //Mat mat = Mat.ImDecode(depthListener.GetLast(), ImreadModes.AnyDepth);
-
-            //Debug.Log("Loaded mat");
-            //Debug.Log("Properties: channels " + mat.Channels() + 
-            //    ", depth " + mat.Depth() + 
-            //    ", type " + mat.Type() + 
-            //    ", size " + mat.Size());
-            //mat.ImEncode();
-
-            //Mat mat2 = new Mat();
-            //mat.ConvertTo(mat2, MatType.CV_16U);
-            //Debug.Log("opencv size: " + mat.ToBytes().Length);
-            //Debug.Log("mat2 size: " + mat.ToBytes(".raw").Length);
-            //short[] data = new short[960 * 540];
-            //mat.GetArray(0, 0, data);
-            //mat.GetArray()
-            //byte[] a = data;
-            // NativeArray<short> a = new NativeArray<short>(data, Allocator.Temp);
-
-
-
-            //depthTexture.LoadRawTextureData<short>(a);
+            UnityEngine.Profiling.Profiler.BeginSample("Copy Depth");
             depthTexture.LoadRawTextureData<short>(depthListener.GetLast());
-
-            //Debug.Log("data size: " + data.Length);
-            //Debug.Log("sizeof(short): " + sizeof(short));
-
-            /*
-            //System.Drawing.Bitmap bmp = image.ToBitmap(System.Drawing.Imaging.ImageFormat.Bmp);
-            Debug.Log("initial      depth: " + image.Depth +
-                ", channels: " + image.ChannelCount +
-                ", datasize: " + image.ToByteArray().Length +
-                ", pix: " + image.GetPixels()[x, y].GetChannel(0) +
-                ", size: " + image.Width + "x" + image.Height);
-            Debug.Log("settings: " + image.Settings);
-            */
-
-            //image.ToBitmap();
-            //depthTexture = depthListener.GetLast();
-            //depthTexture.LoadRawTextureData(depthListener.GetLast());
-            //ImageConversion.
-            //byte[] data = depthListener.GetLast();
-            //int offset = 12;
-            //byte[] data_with_offset = new byte[data.Length-offset];
-            //Array.Copy(data, offset, data_with_offset, 0, data.Length-offset);
-            //depthTexture.LoadImage(depthListener.GetLast());
-            //depthTexture.LoadRawTextureData(image.ToBitmap().);
-            //depthTexture.Apply();
-
-
-            //image.Format = ImageMagick.MagickFormat.Gray;
-            //ImageMagick.MagickFormat.
-
-            //Debug.Log(image.FormatInfo);
-            /*
-            Debug.Log("Formatted depth: " + image.Depth +
-                ", channels: " + image.ChannelCount + 
-                ", datasize: " + image.ToByteArray().Length +
-                ", pix: " + image.GetPixels()[x, y].GetChannel(0) +
-                ", size: " + image.Width + "x" + image.Height);
-
-            Debug.Log("Converted byte: " + 
-                Disp(image.ToByteArray()[loc]) + ", " + 
-                Disp(image.ToByteArray()[loc+1]));
-            Debug.Log("Pixel: " + image.GetPixels()[480, 270].GetChannel(0));
-            */
-
-            //depthTexture.LoadRawTextureData(image.ToByteArray());
-
             depthTexture.Apply();
-            //a.Dispose();
-            //Debug.Log(depthTexture.GetPixel(500, 200));
+            UnityEngine.Profiling.Profiler.EndSample();
         }
+        
 
     }
 
@@ -163,8 +113,10 @@ public class KinectView : MonoBehaviour {
         //Transform t = this.transform * kinect_offset;
         //m = Matrix4x4.TRS(this.transform.position + kinect_offset.position, 
         //    this.transform.rotation, this.transform.localScale);
+        //m = Matrix4x4.TRS(kinect_offset.position,
+        //                  kinect_offset.rotation, kinect_offset.localScale);
         m = Matrix4x4.TRS(kinect_offset.position,
-                          kinect_offset.rotation, kinect_offset.localScale);
+                          kinect_offset.rotation, new UnityEngine.Vector3(1,1,1));
         material.SetMatrix("transformationMatrix", m);
 
 

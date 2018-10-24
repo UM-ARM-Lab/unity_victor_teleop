@@ -14,6 +14,7 @@ limitations under the License.
 */
 
 using UnityEngine;
+using OpenCvSharp;
 
 namespace RosSharp.RosBridgeClient
 {
@@ -36,6 +37,7 @@ namespace RosSharp.RosBridgeClient
         {
             imageData = compressedImage.data;
             isMessageReceived = true;
+
         }
 
         public bool HasNew()
