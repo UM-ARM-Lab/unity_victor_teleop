@@ -12,6 +12,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
+using UnityEngine;
 
 namespace RosSharp.RosBridgeClient
 {
@@ -21,13 +22,21 @@ namespace RosSharp.RosBridgeClient
         private JoyButtonReader[] JoyButtonReaders;
 
         public string FrameId = "Unity";
+        public float maxUpdateIntervalSec;
+
+        private float nextTimeToSend = 0;
 
         private Messages.Sensor.Joy message;
 
-        public void Publish(int gripper_val)
+        public void Publish(float gripper_val)
         {
-            message.buttons[0] = gripper_val;
+            if(Time.time < nextTimeToSend)
+            {
+                return;
+            }
+            message.axes[0] = gripper_val;
             Publish(message);
+            nextTimeToSend = Time.time + maxUpdateIntervalSec;
         }
 
         protected override void Start()
@@ -52,8 +61,8 @@ namespace RosSharp.RosBridgeClient
         {
             message = new Messages.Sensor.Joy();
             message.header.frame_id = FrameId;
-            message.axes = new float[0];
-            message.buttons = new int[1];
+            message.axes = new float[1];
+            message.buttons = new int[0];
         }
 
         private void UpdateMessage()

@@ -66,6 +66,10 @@
     {
       "name": "/actions/buggy/in/Squeeze",
       "type": "boolean"
+    },
+    {
+      "name": "/actions/Victor/in/Gripper",
+      "type": "vector1"
     }
   ],
   "action_sets": [
@@ -79,6 +83,10 @@
     },
     {
       "name": "/actions/buggy",
+      "usage": "single"
+    },
+    {
+      "name": "/actions/Victor",
       "usage": "single"
     }
   ],

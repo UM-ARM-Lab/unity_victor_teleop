@@ -15,8 +15,8 @@ namespace Valve.VR.InteractionSystem.Sample
         [SteamVR_DefaultActionSet("default")]
         public SteamVR_ActionSet actionSet;
 
-        [SteamVR_DefaultAction("GrabGrip", "default")]
-        public SteamVR_Action_Boolean a_grip;
+        [SteamVR_DefaultAction("GrabPinch", "default")]
+        public SteamVR_Action_Single a_grip;
 
         public Transform hand_real;
 
@@ -59,7 +59,7 @@ namespace Valve.VR.InteractionSystem.Sample
 
             //bool b_brake = false;
             //bool b_reset = false;
-            bool gripped = false;
+            float grip = 0;
 
             if (wrenchStampedListener != null)
             {
@@ -85,13 +85,14 @@ namespace Valve.VR.InteractionSystem.Sample
                 //steer = a_steering.GetAxis(hand);
 
                 //throttle = a_trigger.GetAxis(hand);
-                gripped = a_grip.GetState(hand);
+                //gripped = a_grip.GetState(hand);
+                grip = a_grip.GetAxis(hand);
                 //Debug.Log("Gripped is " + gripped);
                 RosSharp.RosBridgeClient.GripperPublisher gripper_pub = 
                     GetComponent<RosSharp.RosBridgeClient.GripperPublisher>();
                 RosSharp.RosBridgeClient.HandTargetPublisher hand_target_pub = 
                     GetComponent<RosSharp.RosBridgeClient.HandTargetPublisher>();
-                gripper_pub.Publish(gripped ? 1 : 0);
+                gripper_pub.Publish(grip);
                 hand_target_pub.PublishPose(this.transform);
                 //b_brake = a_brake.GetState(hand);
                 //b_reset = a_reset.GetState(hand);

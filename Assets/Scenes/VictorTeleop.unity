@@ -44105,7 +44105,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  snapAttachEaseInCompleted: 0
+  snapAttachEaseInCompleted: 1
   interactable: {fileID: 0}
 --- !u!114 &1102141689
 MonoBehaviour:
@@ -44183,7 +44183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionSet: {fileID: 11400000, guid: 10edff6ae5215e2479ec52e3d6883bb1, type: 2}
-  a_grip: {fileID: 11400000, guid: 7f98d96aaf36cfa488e2229fa99688d0, type: 2}
+  a_grip: {fileID: 11400000, guid: f3f45968ad620824a8db632a35e13d15, type: 2}
   hand_real: {fileID: 708698428}
   validIkMaterial: {fileID: 2100000, guid: 62900d2e34ba5a14f9d010198dd51343, type: 2}
   invalidIkMaterial: {fileID: 2100000, guid: edbfa62ba6bebc84a8cb7cb8044a4d7f, type: 2}
@@ -44218,6 +44218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Topic: /left_gripper/target
   FrameId: Unity
+  maxUpdateIntervalSec: 0.1
 --- !u!114 &1102141696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46972,7 +46973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionSet: {fileID: 11400000, guid: 10edff6ae5215e2479ec52e3d6883bb1, type: 2}
-  a_grip: {fileID: 11400000, guid: 7f98d96aaf36cfa488e2229fa99688d0, type: 2}
+  a_grip: {fileID: 11400000, guid: f3f45968ad620824a8db632a35e13d15, type: 2}
   hand_real: {fileID: 365692832}
   validIkMaterial: {fileID: 2100000, guid: 62900d2e34ba5a14f9d010198dd51343, type: 2}
   invalidIkMaterial: {fileID: 2100000, guid: edbfa62ba6bebc84a8cb7cb8044a4d7f, type: 2}
@@ -47114,6 +47115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Topic: /right_gripper/target
   FrameId: Unity
+  maxUpdateIntervalSec: 0.1
 --- !u!114 &1170082579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63111,8 +63113,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1484641078}
-  - component: {fileID: 1484641077}
   - component: {fileID: 1484641079}
+  - component: {fileID: 1484641077}
   m_Layer: 0
   m_Name: ScreenRecorder
   m_TagString: Untagged
@@ -63131,7 +63133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7954e7ac6a2c11643a99f6fb65fa02cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movieCapture: {fileID: 0}
+  movieCapture: {fileID: 1484641079}
   recordButtonPublisher: {fileID: 1754750845}
 --- !u!4 &1484641078
 Transform:
@@ -63168,7 +63170,7 @@ MonoBehaviour:
   _stopMode: 0
   _stopFrames: 0
   _stopSeconds: 0
-  _useMediaFoundationH264: 0
+  _useMediaFoundationH264: 1
   _videoCodecPriority:
   - Lagarith Lossless Codec
   - x264vfw - H.264/MPEG-4 AVC codec
@@ -63189,8 +63191,8 @@ MonoBehaviour:
   _autoGenerateFilename: 1
   _outputFolderType: 0
   _outputFolderPath: Captures
-  _autoFilenamePrefix: MovieCapture
-  _autoFilenameExtension: avi
+  _autoFilenamePrefix: ViveTeleop
+  _autoFilenameExtension: mp4
   _forceFilename: movie.avi
   _imageSequenceStartFrame: 0
   _imageSequenceZeroDigits: 6
@@ -74043,7 +74045,7 @@ MonoBehaviour:
   ui_steerangle: 0
   ui_fillAngles: {x: 0, y: 0}
   resetToPoint: {fileID: 0}
-  actionSet: {fileID: 11400000, guid: 10edff6ae5215e2479ec52e3d6883bb1, type: 2}
+  actionSet: {fileID: 0}
   a_steering: {fileID: 11400000, guid: 4da80c40183cf174f94f90f1456660a3, type: 2}
   a_trigger: {fileID: 11400000, guid: f3f45968ad620824a8db632a35e13d15, type: 2}
   a_brake: {fileID: 11400000, guid: a8a964420a042e847ac5d3c08b331a12, type: 2}

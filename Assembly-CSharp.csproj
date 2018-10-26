@@ -314,6 +314,8 @@
     <Compile Include="Assets\SteamVR_Input\ActionObjects\SteamVR_Input_ActionSet_default_Out.cs" />
     <Compile Include="Assets\SteamVR_Input\ActionObjects\SteamVR_Input_ActionSet_platformer.cs" />
     <Compile Include="Assets\SteamVR_Input\ActionObjects\SteamVR_Input_ActionSet_platformer_In.cs" />
+    <Compile Include="Assets\SteamVR_Input\ActionObjects\SteamVR_Input_ActionSet_Victor.cs" />
+    <Compile Include="Assets\SteamVR_Input\ActionObjects\SteamVR_Input_ActionSet_Victor_In.cs" />
     <Compile Include="Assets\SteamVR_Input\SteamVR_Input_Actions.cs" />
     <Compile Include="Assets\SteamVR_Input\SteamVR_Input_ActionSets.cs" />
     <Compile Include="Assets\Victor\Scripts\ButtonEnabler.cs" />
