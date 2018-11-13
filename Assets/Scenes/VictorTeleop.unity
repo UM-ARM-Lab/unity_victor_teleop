@@ -2896,7 +2896,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &63783779
 Transform:
   m_ObjectHideFlags: 0
@@ -3900,7 +3900,7 @@ Prefab:
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 0c073761c469edb4ca88db41789ba8f5, type: 2}
+      objectReference: {fileID: 2100000, guid: edbfa62ba6bebc84a8cb7cb8044a4d7f, type: 2}
     - target: {fileID: 4416924470931490, guid: f2683b0510d48aa40954d2e674054261, type: 2}
       propertyPath: m_LocalScale.x
       value: 1.0000001
@@ -23957,7 +23957,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &625128014
 Transform:
   m_ObjectHideFlags: 0
@@ -28145,7 +28145,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &721318992
 Transform:
   m_ObjectHideFlags: 0
@@ -29851,7 +29851,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &745349543
 Transform:
   m_ObjectHideFlags: 0
@@ -37244,7 +37244,7 @@ Transform:
   m_GameObject: {fileID: 924629729}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.05, z: 1.2}
-  m_LocalScale: {x: 0.4, y: 1, z: 0.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1616367884}
   m_RootOrder: 3
@@ -44203,7 +44203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4297c3622ac96934990f426aa1978205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Topic: /target_pose/left_flange
+  Topic: /unity_teleop/target_pose/left_flange
   FrameId: victor_root
 --- !u!114 &1102141695
 MonoBehaviour:
@@ -44216,7 +44216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a2fee03764ca3140b9691028b0921f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Topic: /left_gripper/target
+  Topic: /unity_teleop/left_gripper/target
   FrameId: Unity
   maxUpdateIntervalSec: 0.1
 --- !u!114 &1102141696
@@ -44243,7 +44243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a3ec9d49fab80d44aa5755da74c930a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Topic: /left_arm/is_ik_valid
+  Topic: /unity_teleop/left_arm/is_ik_valid
   TimeStep: 0
 --- !u!114 &1102141698
 MonoBehaviour:
@@ -47113,7 +47113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a2fee03764ca3140b9691028b0921f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Topic: /right_gripper/target
+  Topic: /unity_teleop/right_gripper/target
   FrameId: Unity
   maxUpdateIntervalSec: 0.1
 --- !u!114 &1170082579
@@ -47140,7 +47140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4297c3622ac96934990f426aa1978205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Topic: /target_pose/right_flange
+  Topic: /unity_teleop/target_pose/right_flange
   FrameId: victor_root
 --- !u!114 &1170082581
 MonoBehaviour:
@@ -47153,7 +47153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a3ec9d49fab80d44aa5755da74c930a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Topic: /right_arm/is_ik_valid
+  Topic: /unity_teleop/right_arm/is_ik_valid
   TimeStep: 0
 --- !u!114 &1170082582
 MonoBehaviour:
@@ -49254,7 +49254,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1213459334
 Transform:
   m_ObjectHideFlags: 0
@@ -49936,7 +49936,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1224144784
 Transform:
   m_ObjectHideFlags: 0
@@ -54041,7 +54041,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1315369807
 Transform:
   m_ObjectHideFlags: 0
@@ -59430,7 +59430,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1423219943
 Transform:
   m_ObjectHideFlags: 0
@@ -68749,7 +68749,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 428928, guid: 73ac470d3d909d645a6c89a4664b6849, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 428928, guid: 73ac470d3d909d645a6c89a4664b6849, type: 2}
       propertyPath: m_LocalPosition.z
@@ -72764,7 +72764,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1701687970
 Transform:
   m_ObjectHideFlags: 0
@@ -75447,7 +75447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fe4cf3b1dd3507418f7ec019f9193ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Topic: /target_joint_states
+  Topic: unity_teleop/target_joint_states
   TimeStep: 0
   JointNames:
   - victor_left_arm_joint_1
@@ -90086,7 +90086,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2066795614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92103,7 +92103,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2115780393
 Transform:
   m_ObjectHideFlags: 0
