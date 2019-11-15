@@ -12,10 +12,10 @@ namespace Valve.VR.InteractionSystem.Sample
     [RequireComponent(typeof(RosSharp.RosBridgeClient.HandTargetPublisher))]
     public class VictorHand : MonoBehaviour
     {
-        [SteamVR_DefaultActionSet("default")]
+        //[SteamVR_DefaultActionSet("default")]
         public SteamVR_ActionSet actionSet;
 
-        [SteamVR_DefaultAction("GrabPinch", "default")]
+        //[SteamVR_DefaultAction("GrabPinch", "default")]
         public SteamVR_Action_Single a_grip;
 
         public Transform hand_real;
