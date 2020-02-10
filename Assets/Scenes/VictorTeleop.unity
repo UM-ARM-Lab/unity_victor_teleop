@@ -90323,7 +90323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ace2bd4c5d4fc44892d75575403d40e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rosBridgeServerURL: ws://10.10.10.126:9090
+  rosBridgeServerURL: ws://10.10.10.130:9090
 --- !u!4 &1983730305
 Transform:
   m_ObjectHideFlags: 0
