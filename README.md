@@ -12,6 +12,7 @@ The commanded gripper poses exit as `geometry_msgs::pose`.
 2. Clone this repo
 3. Open this repo as a unity project
 4. Import `SteamVR` from the unity asset store
+   - `Window -> Asset Store` and search for SteamVR
 
 ### Ubuntu Setup
 To communicate to ROS:
