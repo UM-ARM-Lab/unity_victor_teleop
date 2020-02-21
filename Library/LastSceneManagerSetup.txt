@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/VictorTeleop.unity
+- path: Assets/SteamVR/InteractionSystem/Samples/Interactions_Example.unity
   isLoaded: 1
   isActive: 1

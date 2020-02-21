@@ -728,6 +728,10 @@
       <Project>{1FD352C7-EEF7-4074-D871-87F9D27EC741}</Project>
       <Name>Assembly-CSharp-Editor-firstpass</Name>
     </ProjectReference>
+    <ProjectReference Include="SteamVR_Actions.csproj">
+      <Project>{E95E4CC9-F37E-055D-4099-EC13BBCE228D}</Project>
+      <Name>SteamVR_Actions</Name>
+    </ProjectReference>
     <ProjectReference Include="SteamVR_Input_Editor.csproj">
       <Project>{FCFCE411-55E3-6CAF-698C-94A4A496A0F2}</Project>
       <Name>SteamVR_Input_Editor</Name>
@@ -743,10 +747,6 @@
     <ProjectReference Include="SteamVR_Windows_EditorHelper.csproj">
       <Project>{5ADD181C-D35D-F681-58AB-02A40D4AA7EE}</Project>
       <Name>SteamVR_Windows_EditorHelper</Name>
-    </ProjectReference>
-    <ProjectReference Include="SteamVR_Actions.csproj">
-      <Project>{E95E4CC9-F37E-055D-4099-EC13BBCE228D}</Project>
-      <Name>SteamVR_Actions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

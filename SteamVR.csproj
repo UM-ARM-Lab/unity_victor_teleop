@@ -127,6 +127,8 @@
     <Compile Include="Assets\SteamVR\InteractionSystem\Core\Scripts\FallbackCameraController.cs" />
     <Compile Include="Assets\SteamVR\InteractionSystem\Core\Scripts\GrabTypes.cs" />
     <Compile Include="Assets\SteamVR\InteractionSystem\Core\Scripts\Hand.cs" />
+    <Compile Include="Assets\SteamVR\InteractionSystem\Core\Scripts\HandCollider.cs" />
+    <Compile Include="Assets\SteamVR\InteractionSystem\Core\Scripts\HandPhysics.cs" />
     <Compile Include="Assets\SteamVR\InteractionSystem\Core\Scripts\HapticRack.cs" />
     <Compile Include="Assets\SteamVR\InteractionSystem\Core\Scripts\HideOnHandFocusLost.cs" />
     <Compile Include="Assets\SteamVR\InteractionSystem\Core\Scripts\HoverButton.cs" />
@@ -198,6 +200,7 @@
     <Compile Include="Assets\SteamVR\InteractionSystem\Samples\Scripts\TargetHitEffect.cs" />
     <Compile Include="Assets\SteamVR\InteractionSystem\Samples\Scripts\TargetMeasurement.cs" />
     <Compile Include="Assets\SteamVR\InteractionSystem\Samples\Squishy\SquishyToy.cs" />
+    <Compile Include="Assets\SteamVR\InteractionSystem\SnapTurn\SnapTurn.cs" />
     <Compile Include="Assets\SteamVR\InteractionSystem\Teleport\Scripts\AllowTeleportWhileAttachedToHand.cs" />
     <Compile Include="Assets\SteamVR\InteractionSystem\Teleport\Scripts\ChaperoneInfo.cs" />
     <Compile Include="Assets\SteamVR\InteractionSystem\Teleport\Scripts\IgnoreTeleportTrace.cs" />
@@ -216,6 +219,7 @@
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_EnumEqualityComparer.cs" />
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_Events.cs" />
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_ExternalCamera.cs" />
+    <Compile Include="Assets\SteamVR\Scripts\SteamVR_ExternalCamera_LegacyManager.cs" />
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_Fade.cs" />
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_Frustum.cs" />
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_IK.cs" />
@@ -231,11 +235,13 @@
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_SphericalProjection.cs" />
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_TrackedCamera.cs" />
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_TrackedObject.cs" />
+    <Compile Include="Assets\SteamVR\Scripts\SteamVR_TrackingReferenceManager.cs" />
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_Utils.cs" />
     <None Include="Assets\SteamVR\Resources\SteamVR_Fade.shader" />
     <None Include="Assets\SteamVR\Resources\SteamVR_ClearAll.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Hints\Shaders\ControllerButtonHints.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Samples\BuggyBuddy\Materials\LightCone.shader" />
+    <None Include="Assets\SteamVR\link.xml" />
     <None Include="Assets\SteamVR\InteractionSystem\Teleport\Shaders\Highlight.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Teleport\Shaders\HighlighGlobal.shader" />
     <None Include="Assets\SteamVR\Resources\SteamVR_SphericalProjection.shader" />
