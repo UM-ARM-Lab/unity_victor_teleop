@@ -1,7 +1,7 @@
 # Unity Teleop (for ARM lab's "Victor" robot)
 
-Unity package for controlling Victor using an HTC vive.
-This unity project connect to [VR Teleop](https://github.com/UM-ARM-Lab/vr_teleop), connecting the Unity interface to the ROS ecosystem. 
+This is a Unity project for controlling the armlab's Victor robot using an HTC vive.
+This unity project connects to [VR Teleop](https://github.com/UM-ARM-Lab/vr_teleop), connecting the Unity interface to the ROS ecosystem. 
 Video from a Kinect enter as ROS rgb and depth images.
 The current robot position enters as ROS robot_state messages
 The commanded gripper poses exit as `geometry_msgs::pose`.
