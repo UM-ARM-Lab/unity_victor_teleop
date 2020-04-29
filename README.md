@@ -1,4 +1,8 @@
 # Unity Teleop (for ARM lab's "Victor" robot)
+This is the unity portion use for teleoperating a robot.
+Want to learn how to use this package to teleop your robot? Check out the [tutorials!](https://github.com/UM-ARM-Lab/unity_victor_teleop/wiki/Tutorial-1:-Set-up-Unity-package)
+
+## Brief description
 
 This is a Unity project for controlling the armlab's Victor robot using an HTC vive.
 This unity project connects to [VR Teleop](https://github.com/UM-ARM-Lab/vr_teleop), connecting the Unity interface to the ROS ecosystem. 
@@ -13,6 +17,8 @@ The commanded gripper poses exit as `geometry_msgs::pose`.
 3. Open this repo as a unity project
 4. Import `SteamVR` from the unity asset store
    - `Window -> Asset Store` and search for SteamVR
+   
+(If you are having issues, check out the [tutorials](https://github.com/UM-ARM-Lab/unity_victor_teleop/wiki/Tutorial-1:-Set-up-Unity-package))
 
 ### Ubuntu Setup
 To communicate to ROS:
