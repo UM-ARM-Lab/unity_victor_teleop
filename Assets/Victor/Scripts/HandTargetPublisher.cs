@@ -20,13 +20,22 @@ namespace RosSharp.RosBridgeClient
     {
 
         public string FrameId = "victor_root";
+        public float maxUpdateIntervalSec;
 
         private Messages.Geometry.PoseStamped message;
+        private float nextTimeToSend = 0;
 
         public void PublishPose(Transform tf)
         {
+            
+            if (Time.time < nextTimeToSend)
+            {
+                return;
+            }
+           
             UpdateMessage(tf);
             Publish(message);
+            nextTimeToSend = Time.time + maxUpdateIntervalSec;
         }
 
         protected override void Start()
@@ -34,12 +43,6 @@ namespace RosSharp.RosBridgeClient
             base.Start();
             InitializeMessage();
         }
-
-        private void Update()
-        {
-            //UpdateMessage();
-        }
-
 
 
         private void InitializeMessage()
@@ -58,8 +61,6 @@ namespace RosSharp.RosBridgeClient
             message.header.Update();
             message.pose.position = GetGeometryPoint(tf.position.Unity2Ros());
             message.pose.orientation = GetGeometryQuaternion(tf.rotation.Unity2Ros());
-
-            Publish(message);
         }
 
         private Messages.Geometry.Point GetGeometryPoint(Vector3 position)

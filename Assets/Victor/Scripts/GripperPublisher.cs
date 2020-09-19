@@ -46,11 +46,6 @@ namespace RosSharp.RosBridgeClient
             InitializeMessage();
         }
 
-        private void Update()
-        {
-            //UpdateMessage();
-        }      
-
         private void InitializeGameObject()
         {
             JoyAxisReaders = GetComponents<JoyAxisReader>();

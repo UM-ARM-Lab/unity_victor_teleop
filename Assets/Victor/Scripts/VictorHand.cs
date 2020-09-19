@@ -68,7 +68,7 @@ namespace Valve.VR.InteractionSystem.Sample
                 
                 if(t == null)
                 {
-                    Debug.Log("Null twist");
+                    //Debug.Log("Null twist");
                 }
                 else
                 {
